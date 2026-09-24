@@ -25,7 +25,7 @@ export default function Navbar() {
                     </span>
                 </Link>
 
-                {/* Nav links: mobile-e niche chole jay (order-3), desktop-e majhkhane */}
+                {/* Nav links*/}
                 <ul className="order-3 flex w-full items-center justify-center gap-2 md:order-none md:w-auto">
                     {links.map((link) => {
                         const isActive = pathname === link.href;
@@ -45,7 +45,7 @@ export default function Navbar() {
                     })}
                 </ul>
 
-                {/* Plan ar Saved badge */}
+                {/* Plan and Saved badge */}
                 <div className="flex items-center gap-5 text-sm">
                     <Link href="/my-plan" className="flex items-center gap-2">
                         <span>Plan</span>
