@@ -15,9 +15,8 @@ const sortOptions = [
 function PlanCard({ item, isPlanTab, onRemove, onMarkDone }) {
   return (
     <li
-      className={`flex flex-col gap-4 rounded-2xl border border-line bg-card p-4 sm:flex-row sm:items-center ${
-        item.done ? "opacity-70" : ""
-      }`}
+      className={`flex flex-col gap-4 rounded-2xl border border-line bg-card p-4 sm:flex-row sm:items-center ${item.done ? "opacity-70" : ""
+        }`}
     >
       <div className="relative h-32 w-full shrink-0 overflow-hidden rounded-xl sm:h-20 sm:w-36">
         <Image
@@ -48,7 +47,7 @@ function PlanCard({ item, isPlanTab, onRemove, onMarkDone }) {
         </div>
       </div>
 
-      <div className="flex shrink-0 items-center gap-2">
+     <div className="flex flex-wrap items-center gap-2 sm:shrink-0">
         <Link
           href={`/workout/${item.id}`}
           className="rounded-full border border-line px-4 py-2 text-sm font-medium text-white transition hover:border-accent"
@@ -88,12 +87,11 @@ export default function MyPlanPage() {
     usePlan();
   const [tab, setTab] = useState("plan");
   const [sortBy, setSortBy] = useState("duration");
-
-  // Shob hook (useState, usePlan) upore, tai early return ekhane safe
   if (!isLoaded) {
     return (
-      <div className="flex min-h-[60vh] items-center justify-center">
+      <div className="flex min-h-[60vh] flex-col items-center justify-center gap-4">
         <div className="h-10 w-10 animate-spin rounded-full border-4 border-line border-t-accent" />
+        <p className="text-muted">Loading workouts…</p>
       </div>
     );
   }
@@ -138,17 +136,15 @@ export default function MyPlanPage() {
         <div className="flex gap-1 rounded-xl border border-line bg-card p-1">
           <button
             onClick={() => setTab("plan")}
-            className={`rounded-lg px-4 py-2 text-sm transition ${
-              isPlanTab ? "bg-line font-semibold text-white" : "text-muted"
-            }`}
+            className={`rounded-lg px-4 py-2 text-sm transition ${isPlanTab ? "bg-line font-semibold text-white" : "text-muted"
+              }`}
           >
             Today&apos;s Plan
           </button>
           <button
             onClick={() => setTab("saved")}
-            className={`rounded-lg px-4 py-2 text-sm transition ${
-              !isPlanTab ? "bg-line font-semibold text-white" : "text-muted"
-            }`}
+            className={`rounded-lg px-4 py-2 text-sm transition ${!isPlanTab ? "bg-line font-semibold text-white" : "text-muted"
+              }`}
           >
             Saved
           </button>
@@ -174,7 +170,7 @@ export default function MyPlanPage() {
         </label>
       </div>
 
-      {/* List ba Empty state */}
+      {/* List or Empty state */}
       {sortedList.length === 0 ? (
         <div className="mt-6 flex flex-col items-center rounded-2xl border border-dashed border-line px-6 py-20 text-center">
           <h2 className="text-2xl">Nothing here yet</h2>
