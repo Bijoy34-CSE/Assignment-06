@@ -13,13 +13,13 @@
 body {
   background: var(--color-bg);
   color: #ffffff;
-  font-family: var(--font-body), sans-serif;
+  font-family: var(--font-inter), sans-serif;
 }
 
 h1,
 h2,
 h3 {
-  font-family: var(--font-display), sans-serif;
+  font-family: var(--font-oswald), sans-serif;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.01em;

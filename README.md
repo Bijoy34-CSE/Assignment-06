@@ -11,8 +11,6 @@
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?logo=tailwindcss&logoColor=white)
 ![Vercel](https://img.shields.io/badge/Deployed_on-Vercel-000000?logo=vercel&logoColor=white)
 
-🔗  📦 **[GitHub Repository](https://github.com/Bijoy34-CSE/Assignment-06)**
-
 </div>
 
 ---
@@ -25,10 +23,6 @@ full specs and instructions, and then decide what goes into **today's plan** and
 what you'd rather **save for later**. The My Plan page keeps live totals of
 exercises, minutes and calories, so you can see the size of your workout at a
 glance. Everything works on mobile, tablet and desktop.
-
-<!-- Optional: add a screenshot of your home page here
-![FitLog Home](./public/screenshot.png)
--->
 
 ---
 

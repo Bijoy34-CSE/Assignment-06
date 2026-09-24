@@ -1,20 +1,21 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowDown } from "lucide-react";
+
 export default function Hero() {
   return (
     <section className="mx-auto max-w-7xl px-6 pt-10">
-      <div className="flex flex-col items-center justify-between gap-8 rounded-3xl border border-line bg-card px-8 py-12 md:flex-row md:px-14 md:py-16">
-        <div className="max-w-2xl text-center md:text-left">
-          <p className="text-xs font-semibold uppercase tracking-widest text-accent">
+      <div className="flex flex-col items-center justify-between gap-10 rounded-3xl border border-line bg-card px-8 py-12 lg:flex-row lg:px-14 lg:py-16">
+        <div className="max-w-[640px] text-center lg:text-left">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
             Workout Library
           </p>
 
-          <h1 className="mt-4 text-5xl leading-[0.95] md:text-7xl">
+          <h1 className="mt-5 text-4xl font-bold leading-[0.95] tracking-tight sm:text-5xl md:text-6xl lg:text-[64px]">
             Train with intent. Log every set.
           </h1>
 
-          <p className="mt-6 max-w-md text-muted">
+          <p className="mt-6 max-w-[540px] text-lg leading-relaxed text-muted">
             FitLog is a dark, no-nonsense gym companion: pick a lift, lock it
             into today&apos;s plan, and watch the week&apos;s work add up.
           </p>
@@ -34,7 +35,7 @@ export default function Hero() {
           width={334}
           height={334}
           priority
-          className="h-auto w-56 md:w-72"
+          className="h-auto w-64 lg:w-[334px]"
         />
       </div>
     </section>
