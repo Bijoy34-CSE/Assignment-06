@@ -1,39 +1,40 @@
 import Image from "next/image";
-import { Dumbbell } from "lucide-react";
+import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="max-w-7xl mx-auto px-6 pt-10">
-      <div className="bg-card border border-line rounded-2xl grid md:grid-cols-2 gap-8 items-center p-8 md:p-12">
-        <div>
-          <p className="text-accent text-sm font-bold tracking-widest mb-3">
-            WORKOUT LIBRARY
+    <section className="mx-auto max-w-7xl px-6 pt-10">
+      <div className="flex flex-col items-center justify-between gap-8 rounded-3xl border border-line bg-card px-8 py-12 md:flex-row md:px-14 md:py-16">
+        <div className="max-w-xl text-center md:text-left">
+          <p className="text-xs font-semibold uppercase tracking-widest text-accent">
+            Workout Library
           </p>
-          <h1 className="font-display font-bold text-3xl md:text-4xl leading-tight mb-4">
-            TRAIN WITH INTENT. LOG EVERY SET.
+
+          <h1 className="mt-4 text-4xl leading-tight md:text-6xl">
+            Train with intent. Log every set.
           </h1>
-          <p className="text-muted mb-6">
+
+          <p className="mt-5 text-muted">
             FitLog is a dark, no-nonsense gym companion: pick a lift, lock it
             into today&apos;s plan, and watch the week&apos;s work add up.
           </p>
-          
-          <a  href="#library"
-            className="inline-flex items-center gap-2 bg-accent text-black font-bold px-6 py-3 rounded-md hover:opacity-90 transition-opacity"
+
+          <Link
+            href="#library"
+            className="mt-8 inline-block rounded-md bg-accent px-6 py-3 text-sm font-bold uppercase tracking-wide text-black transition hover:brightness-110"
           >
-             
-            BROWSE WORKOUTS
-          </a>
+            Browse Workouts
+          </Link>
         </div>
 
-        <div className="relative w-full h-56 md:h-72">
-          <Image
-  src="/banner.png"
-  alt="FitLog banner"
-  fill
-  sizes="(max-width: 768px) 100vw, 50vw"
-  className="object-contain"
-/>
-        </div>
+        <Image
+          src="/banner.png"
+          alt="Gym equipment illustration"
+          width={334}
+          height={334}
+          priority
+          className="h-auto w-56 md:w-72"
+        />
       </div>
     </section>
   );
