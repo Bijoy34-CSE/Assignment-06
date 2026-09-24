@@ -186,7 +186,7 @@ function PlanCard({ item, isPlanTab, onRemove, onMarkDone }) {
 
       <div className="flex items-center gap-2 shrink-0">
         <Link
-          href={`/workouts/${item.id}`}
+          href={`/workout/${item.id}`}
           className="border border-line text-white text-sm font-medium px-4 py-2 rounded-md hover:border-accent transition-colors"
         >
           View Details
