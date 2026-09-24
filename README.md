@@ -11,7 +11,7 @@
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?logo=tailwindcss&logoColor=white)
 ![Vercel](https://img.shields.io/badge/Deployed_on-Vercel-000000?logo=vercel&logoColor=white)
 
-🔗 **[Live Site](<your-live-link>)** &nbsp;|&nbsp; 📦 **[GitHub Repository](https://github.com/Bijoy34-CSE/Assignment-06)**
+🔗  📦 **[GitHub Repository](https://github.com/Bijoy34-CSE/Assignment-06)**
 
 </div>
 
