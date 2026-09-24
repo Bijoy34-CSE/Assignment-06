@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div align="center">
 
-## Getting Started
+# 💪 FitLog
 
-First, run the development server:
+### Workout Library & Daily Planner
+
+*Pick a lift. Lock it into today's plan. Log honest work.*
+
+![Next.js](https://img.shields.io/badge/Next.js-16-000000?logo=nextdotjs&logoColor=white)
+![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?logo=tailwindcss&logoColor=white)
+![Vercel](https://img.shields.io/badge/Deployed_on-Vercel-000000?logo=vercel&logoColor=white)
+
+🔗 **[Live Site](<your-live-link>)** &nbsp;|&nbsp; 📦 **[GitHub Repository](<your-github-link>)**
+
+</div>
+
+---
+
+## 📖 Description
+
+FitLog is a dark, no-nonsense gym companion built as part of my Next.js module
+assignment. You can browse a library of 12 workouts, open any of them to see the
+full specs and instructions, and then decide what goes into **today's plan** and
+what you'd rather **save for later**. The My Plan page keeps live totals of
+exercises, minutes and calories, so you can see the size of your workout at a
+glance. Everything works on mobile, tablet and desktop.
+
+<!-- Optional: add a screenshot of your home page here
+![FitLog Home](./public/screenshot.png)
+-->
+
+---
+
+## 🛠️ Technologies Used
+
+| Technology | Purpose |
+| --- | --- |
+| **Next.js 16 (App Router)** | Routing, dynamic routes, Server & Client Components |
+| **React 19** | `useState`, `useEffect` and the Context API for state |
+| **Tailwind CSS v4** | Responsive, consistent styling |
+| **react-hot-toast** | Toast notifications |
+| **lucide-react** | Icons |
+| **Vercel** | Deployment |
+
+---
+
+## ✨ Key Features
+
+1. **Workout Library** — 12 workouts fetched from an API and shown in a
+   responsive grid with muscle tags, equipment, duration, calories and rating.
+2. **Dynamic Details Page** — every card opens `/workout/[id]` with a full spec
+   sheet and step-by-step instructions.
+3. **Today's Plan & Saved List** — add up to five lifts to today's plan or keep
+   workouts for later, with toast feedback for every action.
+4. **My Plan Dashboard** — live Exercises / Minutes / Calories totals, tabs for
+   Today's Plan and Saved, sorting, Mark as Done and remove.
+5. **Persistent & Polished** — plan and saved lists survive a page reload
+   (`localStorage`), plus loading states, empty states and a custom 404 page.
+
+---
+
+## 🚀 Run Locally
 
 ```bash
+git clone <your-github-link>
+cd assignment-06
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🔌 API
 
-## Learn More
+- All workouts: `https://api.abcz.workers.dev/api/fitlog`
+- Single workout: `https://api.abcz.workers.dev/api/fitlog/:id`
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<div align="center">
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Built by **Bijoy Kumar Paul** · Train hard, log honest. 🏋️
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+</div>
