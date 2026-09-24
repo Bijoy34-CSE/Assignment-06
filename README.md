@@ -63,7 +63,7 @@ glance. Everything works on mobile, tablet and desktop.
 ## 🚀 Run Locally
 
 ```bash
-git clone <your-github-link>
+git clone https://github.com/Bijoy34-CSE/Assignment-06
 cd assignment-06
 npm install
 npm run dev
