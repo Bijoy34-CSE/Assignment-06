@@ -1,9 +1,9 @@
 import { Oswald, Inter } from "next/font/google";
-import "./globals.css";
-import { PlanProvider } from "@/context/PlanContext";
 import { Toaster } from "react-hot-toast";
+import { PlanProvider } from "@/context/PlanContext";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import "./globals.css";
 
 const oswald = Oswald({
   subsets: ["latin"],
@@ -23,10 +23,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${oswald.variable} ${inter.variable} antialiased`}>
+      <body
+        className={`${oswald.variable} ${inter.variable} flex min-h-screen flex-col antialiased`}
+      >
         <PlanProvider>
           <Navbar />
-          {children}
+          <main className="flex-1">{children}</main>
           <Footer />
           <Toaster position="top-right" />
         </PlanProvider>

@@ -1,58 +1,62 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { usePlan } from "@/context/PlanContext";
+
+const links = [
+    { href: "/", label: "Workouts" },
+    { href: "/my-plan", label: "My Plan" },
+];
 
 export default function Navbar() {
     const pathname = usePathname();
     const { plan, saved } = usePlan();
 
-    const navLinks = [
-        { name: "Workouts", href: "/" },
-        { name: "My Plan", href: "/my-plan" },
-    ];
-
     return (
-        <header className="border-b border-line bg-bg/95 backdrop-blur sticky top-0 z-50">
-            <nav className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+        <header className="border-b border-line bg-bg">
+            <nav className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-y-3 px-6 py-4">
                 {/* Logo */}
                 <Link href="/" className="flex items-center gap-2">
-                    <Image src="/logo.png" alt="FitLog logo" width={28} height={28} />
-                    <span className="font-display text-xl tracking-wide">FITLOG</span>
+                    <Image src="/logo.png" alt="FitLog logo" width={32} height={32} />
+                    <span className="font-display text-2xl font-bold uppercase tracking-wide">
+                        FitLog
+                    </span>
                 </Link>
 
-                {/* Nav links */}
-                <div className="hidden md:flex items-center gap-2">
-                    {navLinks.map((link) => {
+                {/* Nav links: mobile-e niche chole jay (order-3), desktop-e majhkhane */}
+                <ul className="order-3 flex w-full items-center justify-center gap-2 md:order-none md:w-auto">
+                    {links.map((link) => {
                         const isActive = pathname === link.href;
                         return (
-                            <Link
-                                key={link.href}
-                                href={link.href}
-                                className={`px-4 py-2 rounded-full text-sm font-bold transition-colors ${isActive
-                                        ? "bg-accent/15 text-accent"
-                                        : "text-muted hover:text-white"
-                                    }`}
-                            >
-                                {link.name}
-                            </Link>
+                            <li key={link.href}>
+                                <Link
+                                    href={link.href}
+                                    className={`rounded-full px-4 py-2 text-sm transition ${isActive
+                                            ? "bg-accent/10 text-accent"
+                                            : "text-white/80 hover:text-white"
+                                        }`}
+                                >
+                                    {link.label}
+                                </Link>
+                            </li>
                         );
                     })}
-                </div>
+                </ul>
 
-                {/* Badges */}
-                <div className="flex items-center gap-4 text-sm">
+                {/* Plan ar Saved badge */}
+                <div className="flex items-center gap-5 text-sm">
                     <Link href="/my-plan" className="flex items-center gap-2">
-                        <span className="text-muted">Plan</span>
-                        <span className="bg-accent text-black rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">
+                        <span>Plan</span>
+                        <span className="flex h-6 min-w-6 items-center justify-center rounded-full bg-accent px-2 text-xs font-bold text-black">
                             {plan.length}
                         </span>
                     </Link>
-                    <Link href="/my-plan" className="flex items-center gap-2">
-                        <span className="text-muted">Saved</span>
-                        <span className="border border-line text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">
+
+                    <Link href="/my-plan" className="flex items-center gap-2 text-muted">
+                        <span>Saved</span>
+                        <span className="flex h-6 min-w-6 items-center justify-center rounded-full border border-line px-2 text-xs text-white">
                             {saved.length}
                         </span>
                     </Link>

@@ -29,7 +29,7 @@ export function PlanProvider({ children }) {
       toast.error("Already saved");
       return;
     }
-    setSaved([...saved, { ...workout }]);
+    setSaved([...saved, workout]);
     toast.success("Saved for later");
   };
 
@@ -45,11 +45,9 @@ export function PlanProvider({ children }) {
 
   const markDone = (id) => {
     setPlan(
-      plan.map((item) =>
-        item.id === id ? { ...item, done: true } : item
-      )
+      plan.map((item) => (item.id === id ? { ...item, done: true } : item))
     );
-    toast.success("Marked as done");
+    toast.success("Nice work! Marked as done");
   };
 
   const value = {
