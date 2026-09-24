@@ -1,15 +1,43 @@
 "use client";
 
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
 
 const PlanContext = createContext(null);
 
 const PLAN_LIMIT = 5;
+const PLAN_KEY = "fitlog-plan";
+const SAVED_KEY = "fitlog-saved";
 
 export function PlanProvider({ children }) {
   const [plan, setPlan] = useState([]);
   const [saved, setSaved] = useState([]);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  // 1. Page load hole localStorage theke data ano
+  useEffect(() => {
+    try {
+      const storedPlan = localStorage.getItem(PLAN_KEY);
+      const storedSaved = localStorage.getItem(SAVED_KEY);
+      if (storedPlan) setPlan(JSON.parse(storedPlan));
+      if (storedSaved) setSaved(JSON.parse(storedSaved));
+    } catch (error) {
+      console.error("Could not read saved data", error);
+    }
+    setIsLoaded(true);
+  }, []);
+
+  // 2. plan bodlale localStorage-e save koro (load hoyar por-i)
+  useEffect(() => {
+    if (!isLoaded) return;
+    localStorage.setItem(PLAN_KEY, JSON.stringify(plan));
+  }, [plan, isLoaded]);
+
+  // 3. saved bodlale localStorage-e save koro
+  useEffect(() => {
+    if (!isLoaded) return;
+    localStorage.setItem(SAVED_KEY, JSON.stringify(saved));
+  }, [saved, isLoaded]);
 
   const addToPlan = (workout) => {
     if (plan.some((item) => item.id === workout.id)) {
@@ -53,6 +81,7 @@ export function PlanProvider({ children }) {
   const value = {
     plan,
     saved,
+    isLoaded,
     addToPlan,
     addToSaved,
     removeFromPlan,
