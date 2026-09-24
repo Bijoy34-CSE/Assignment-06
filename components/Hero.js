@@ -5,16 +5,16 @@ export default function Hero() {
   return (
     <section className="mx-auto max-w-7xl px-6 pt-10">
       <div className="flex flex-col items-center justify-between gap-8 rounded-3xl border border-line bg-card px-8 py-12 md:flex-row md:px-14 md:py-16">
-        <div className="max-w-xl text-center md:text-left">
+        <div className="max-w-2xl text-center md:text-left">
           <p className="text-xs font-semibold uppercase tracking-widest text-accent">
             Workout Library
           </p>
 
-          <h1 className="mt-4 text-4xl leading-tight md:text-6xl">
+          <h1 className="mt-4 text-5xl leading-[0.95] md:text-7xl">
             Train with intent. Log every set.
           </h1>
 
-          <p className="mt-5 text-muted">
+          <p className="mt-6 max-w-md text-muted">
             FitLog is a dark, no-nonsense gym companion: pick a lift, lock it
             into today&apos;s plan, and watch the week&apos;s work add up.
           </p>
