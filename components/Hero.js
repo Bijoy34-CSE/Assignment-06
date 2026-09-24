@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-
+import { ArrowDown } from "lucide-react";
 export default function Hero() {
   return (
     <section className="mx-auto max-w-7xl px-6 pt-10">
@@ -21,9 +21,10 @@ export default function Hero() {
 
           <Link
             href="#library"
-            className="mt-8 inline-block rounded-md bg-accent px-6 py-3 text-sm font-bold uppercase tracking-wide text-black transition hover:brightness-110"
+            className="mt-8 inline-flex items-center gap-2 rounded-md bg-accent px-6 py-3 text-sm font-bold uppercase tracking-wide text-black transition hover:brightness-110"
           >
             Browse Workouts
+            <ArrowDown size={16} />
           </Link>
         </div>
 
