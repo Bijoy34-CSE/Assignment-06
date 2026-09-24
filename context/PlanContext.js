@@ -14,12 +14,14 @@ export function PlanProvider({ children }) {
   const [saved, setSaved] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
 
-  // 1. Page load hole localStorage theke data ano
+  // 1. load plan and saved from localStorage
   useEffect(() => {
     try {
       const storedPlan = localStorage.getItem(PLAN_KEY);
       const storedSaved = localStorage.getItem(SAVED_KEY);
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       if (storedPlan) setPlan(JSON.parse(storedPlan));
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       if (storedSaved) setSaved(JSON.parse(storedSaved));
     } catch (error) {
       console.error("Could not read saved data", error);
@@ -27,13 +29,12 @@ export function PlanProvider({ children }) {
     setIsLoaded(true);
   }, []);
 
-  // 2. plan bodlale localStorage-e save koro (load hoyar por-i)
   useEffect(() => {
     if (!isLoaded) return;
     localStorage.setItem(PLAN_KEY, JSON.stringify(plan));
   }, [plan, isLoaded]);
 
-  // 3. saved bodlale localStorage-e save koro
+
   useEffect(() => {
     if (!isLoaded) return;
     localStorage.setItem(SAVED_KEY, JSON.stringify(saved));
